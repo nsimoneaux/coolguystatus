@@ -12,7 +12,7 @@ class CoolGuyStatus < Sinatra::Base
     if response["icestats"]["source"][0].length > 4
       send_file 'live.html'
     else
-      json live: false
+      send_file 'prerecorded.html'
     end
   end
 end
