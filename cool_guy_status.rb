@@ -10,7 +10,7 @@ class CoolGuyStatus < Sinatra::Base
     response = nil
     response = JSON.parse(Net::HTTP.get(URI('http://stream.coolguyradio.com/status-json.xsl')))
     if response["icestats"]["source"][0].length > 4
-      json live: true
+      send_file live.html
     else
       json live: false
     end
